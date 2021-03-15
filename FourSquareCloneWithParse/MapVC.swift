@@ -7,14 +7,13 @@
 
 import UIKit
 import MapKit
+import Parse
 
 class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
     var locationManager = CLLocationManager()
-    var chosenLatitude = ""
-    var chosenLongitude = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +47,8 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
             annotation.title = PlaceModel.sharedInstance.placeName
             annotation.subtitle = PlaceModel.sharedInstance.placeType
             self.mapView.addAnnotation(annotation)
-            self.chosenLatitude = String(coordinates.latitude)
-            self.chosenLongitude = String(coordinates.longitude)
+            PlaceModel.sharedInstance.placeLatitude = String(coordinates.latitude)
+            PlaceModel.sharedInstance.placeLongitude = String(coordinates.longitude)
         }
     }
     
@@ -61,16 +60,43 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         mapView.setRegion(region, animated: true)
     }
     
-    //save button func
-    @objc func saveButtonClicked() {
-        //Parse
-    }
-    
     @objc func backButtonClicked() {
         //to back code
         self.dismiss(animated: true, completion: nil)
     }
-
     
+    //save button func
+    @objc func saveButtonClicked() {
+        //upload to parse
+        let placeModel = PlaceModel.sharedInstance
+        
+        let object = PFObject(className: "Places")
+        object["name"] = placeModel.placeName
+        object["type"] = placeModel.placeType
+        object["atmosphere"] = placeModel.placeAtmosphere
+        object["latitude"] = placeModel.placeLatitude
+        object["longitude"] = placeModel.placeLongitude
+        
+        //image to data
+        if let imageData = placeModel.placeImage.jpegData(compressionQuality: 0.5) {
+            object["image"] = PFFileObject(name: "image.jpeg", data: imageData)
+        }
+        //save
+        object.saveInBackground { (success, error) in
+            if error != nil {
+                self.makeAlert(messageInput: error?.localizedDescription ?? "Error!")
+            } else {
+                self.performSegue(withIdentifier: "fromMapVCtoPlacesVC", sender: nil)
+            }
+        }
+    }
+    
+    //alert func
+    func makeAlert(messageInput : String) {
+        let alert = UIAlertController(title: "ERROR", message: messageInput, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(okButton)
+        self.present(alert, animated: true, completion: nil)
+    }
 
 }
