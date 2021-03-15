@@ -13,7 +13,6 @@ class PlacesVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
 
         //adding add button
@@ -46,6 +45,4 @@ class PlacesVC: UIViewController {
         alert.addAction(okButton)
         self.present(alert, animated: true, completion: nil)
     }
-    
-
 }

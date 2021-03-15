@@ -24,7 +24,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let navigationController = board.instantiateViewController(identifier: "navigationController") as! UINavigationController
             window?.rootViewController = navigationController
         }
-        
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
@@ -55,7 +54,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
-

@@ -15,10 +15,8 @@ class SignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
-
     }
+    
     @IBAction func signInClicked(_ sender: Any) {
         //sign in with existed user
         if userNameText.text != "" && passwordText.text != "" {
@@ -32,7 +30,6 @@ class SignUpVC: UIViewController {
         }
     }
         
-    
     @IBAction func signUpClicked(_ sender: Any) {
         //creating new user
         if userNameText.text != "" && passwordText.text != "" {
@@ -60,4 +57,3 @@ class SignUpVC: UIViewController {
     }
     
 }
-

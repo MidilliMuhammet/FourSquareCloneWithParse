@@ -17,9 +17,6 @@ class DetailsVC: UIViewController {
     @IBOutlet weak var detailsMapView: MKMapView!
     
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

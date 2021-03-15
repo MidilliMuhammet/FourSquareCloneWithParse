@@ -12,6 +12,7 @@
 		7215360725FEDB43005E6ED8 /* AddPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7215360625FEDB43005E6ED8 /* AddPlaceVC.swift */; };
 		7215360B25FEDC81005E6ED8 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7215360A25FEDC81005E6ED8 /* MapVC.swift */; };
 		7215360F25FEE040005E6ED8 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7215360E25FEE040005E6ED8 /* DetailsVC.swift */; };
+		728F9E5225FEF2E700FCED02 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728F9E5125FEF2E700FCED02 /* PlaceModel.swift */; };
 		72AC323125FEA9DC0011ABB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AC323025FEA9DC0011ABB2 /* AppDelegate.swift */; };
 		72AC323325FEA9DC0011ABB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AC323225FEA9DC0011ABB2 /* SceneDelegate.swift */; };
 		72AC323525FEA9DC0011ABB2 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AC323425FEA9DC0011ABB2 /* SignUpVC.swift */; };
@@ -26,6 +27,7 @@
 		7215360625FEDB43005E6ED8 /* AddPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceVC.swift; sourceTree = "<group>"; };
 		7215360A25FEDC81005E6ED8 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		7215360E25FEE040005E6ED8 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
+		728F9E5125FEF2E700FCED02 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		72AC322D25FEA9DC0011ABB2 /* FourSquareCloneWithParse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourSquareCloneWithParse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72AC323025FEA9DC0011ABB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72AC323225FEA9DC0011ABB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				7215360625FEDB43005E6ED8 /* AddPlaceVC.swift */,
 				7215360A25FEDC81005E6ED8 /* MapVC.swift */,
 				7215360E25FEE040005E6ED8 /* DetailsVC.swift */,
+				728F9E5125FEF2E700FCED02 /* PlaceModel.swift */,
 				72AC323625FEA9DC0011ABB2 /* Main.storyboard */,
 				72AC323925FEA9DC0011ABB2 /* Assets.xcassets */,
 				72AC323B25FEA9DC0011ABB2 /* LaunchScreen.storyboard */,
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72AC323525FEA9DC0011ABB2 /* SignUpVC.swift in Sources */,
+				728F9E5225FEF2E700FCED02 /* PlaceModel.swift in Sources */,
 				7215360B25FEDC81005E6ED8 /* MapVC.swift in Sources */,
 				72AC323125FEA9DC0011ABB2 /* AppDelegate.swift in Sources */,
 				7215360225FED410005E6ED8 /* PlacesVC.swift in Sources */,
@@ -372,6 +376,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 32Z3ATUV54;
 				INFOPLIST_FILE = FourSquareCloneWithParse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -391,6 +396,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 32Z3ATUV54;
 				INFOPLIST_FILE = FourSquareCloneWithParse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
