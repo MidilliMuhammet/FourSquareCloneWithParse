@@ -48,6 +48,7 @@ class DetailsVC: UIViewController {
             if objects != nil {
                 if objects!.count > 0 {
                     let chosenPlaceObject = objects![0]
+                    //objetcs
                     if let placeName = chosenPlaceObject.object(forKey: "name") as? String {
                         self.detailsNameLabel.text = placeName
                     }
@@ -76,6 +77,16 @@ class DetailsVC: UIViewController {
                         }
                     }
                     }
+                    //maps
+                    let location = CLLocationCoordinate2D(latitude: self.chosenLatitude, longitude: self.chosenLongitude)
+                    let span = MKCoordinateSpan(latitudeDelta: 0.035, longitudeDelta: 0.035)
+                    let region = MKCoordinateRegion(center: location, span: span)
+                    self.detailsMapView.setRegion(region, animated: true)
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = location
+                    annotation.title = self.detailsNameLabel.text!
+                    annotation.subtitle = self.detailsTypeLabel.text!
+                    self.detailsMapView.addAnnotation(annotation)
                 }
             }
         }
